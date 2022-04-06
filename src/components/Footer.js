@@ -4,7 +4,7 @@ import LogoFooter from "../assets/logofooter.svg";
 const Footer = () => {
 
     return(
-        <footer className="flex items-center bg-zinc-900 flex-col">
+        <footer className="flex items-center bg-zinc-900 flex-col fixed bottom-0 w-full">
             <ul className="w-48 flex p-3 text-gray-50 text-2xl justify-evenly">
                 <li>
                     <a href="https://www.linkedin.com/in/carolina-lerner-223034214/" target="_blank" rel="noopener noreferrer">
