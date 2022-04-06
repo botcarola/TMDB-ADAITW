@@ -6,6 +6,7 @@ import Movies from "./components/Movies";
 import Series from "./components/Series";
 import Categorias from "./components/Categorias";
 import Error from "./components/Error";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
 
     <>        
         <BrowserRouter>
+            <Nav />
             <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/movies" element={<Movies />} />
