@@ -1,33 +1,26 @@
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "./components/Home";
+import VistaDetalle from "./components/VistaDetalle";
+import Movies from "./components/Movies";
+import Series from "./components/Series";
+import Categorias from "./components/Categorias";
+import Error from "./components/Error";
 
 const App = () => {
 
   return(
     <>
     <BrowserRouter>
-    <h2>Hola:D</h2>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/movies" element={<Home />} />
-              <Route path="/movie/:id/:info" element={<Home />} />
-
-              <Route path="/movies/trending/page/:pagina" element={<Home />} />
-              <Route path="/movies/popular/page/:pagina" element={<Home />} />
-              <Route path="/movies/top_rated/page/:pagina" element={<Home />} />
-              <Route path="/movies/upcoming/page/:pagina" element={<Home />} />
-              <Route path="/movies/now_playing/page/:pagina" element={<Home />} />           
-
-              <Route path="/tv" element={<Home />} />
-              <Route path="/tv/:id/:info" element={<Home />} />  
-
-              <Route path="/tv/trending/page/:pagina" element={<Home/>} />
-              <Route path="/tv/popular/page/:pagina" element={<Home/>} />
-              <Route path="/tv/top_rated/page/:pagina" element={<Home />} />
-              <Route path="/tv/on_the_air/page/:pagina" element={<Home />} />
-
-              <Route path="/*" element={<Home />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/movie/:id/:info" element={<VistaDetalle />} />
+              <Route path="/movies/:category/page/:pagina" element={<Categorias />} />                    
+              <Route path="/tv" element={<Series />} />
+              <Route path="/tv/:id/:info" element={<VistaDetalle />} />  
+              <Route path="/tv/:category/page/:pagina" element={<Categorias/>} />
+              <Route path="/*" element={<Error />} />
             </Routes>
     </BrowserRouter>
     </>
