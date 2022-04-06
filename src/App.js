@@ -6,23 +6,26 @@ import Movies from "./components/Movies";
 import Series from "./components/Series";
 import Categorias from "./components/Categorias";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
 
 const App = () => {
 
   return(
-    <>
-    <BrowserRouter>
+
+    <>        
+        <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/movies" element={<Movies />} />
-              <Route path="/movie/:id/:info" element={<VistaDetalle />} />
-              <Route path="/movies/:category/page/:pagina" element={<Categorias />} />                    
-              <Route path="/tv" element={<Series />} />
-              <Route path="/tv/:id/:info" element={<VistaDetalle />} />  
-              <Route path="/tv/:category/page/:pagina" element={<Categorias/>} />
-              <Route path="/*" element={<Error />} />
+                  <Route path="/" element={<Home />} />
+                  <Route path="/movies" element={<Movies />} />
+                  <Route path="/movie/:id/:info" element={<VistaDetalle />} />
+                  <Route path="/movies/:category/page/:pagina" element={<Categorias />} />                    
+                  <Route path="/tv" element={<Series />} />
+                  <Route path="/tv/:id/:info" element={<VistaDetalle />} />  
+                  <Route path="/tv/:category/page/:pagina" element={<Categorias/>} />
+                  <Route path="/*" element={<Error />} />
             </Routes>
-    </BrowserRouter>
+            <Footer />            
+        </BrowserRouter>
     </>
   )
 }
