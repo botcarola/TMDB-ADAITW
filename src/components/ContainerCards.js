@@ -13,7 +13,7 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) =>
     const arrayVerificado = useSplice(elementos, recortarArray)   
 
     return (
-    <div className="flex flex-col mt-10 mb-5">
+    <div className="mt-10 mb-5 m-5">
         <Link className="flex items-center text-3xl text-white mb-4 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/1`}>
             {titulo}
         <BsArrowRightShort className="ml-3"/>
@@ -24,7 +24,7 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) =>
                 <Card 
                     imagen={curr.poster_path}
                     titulo={!!curr.title ? curr.title : curr.name}            
-                />
+                />                
             </Link>
             )}
         </div>            

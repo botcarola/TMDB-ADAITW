@@ -3,3 +3,9 @@ body{
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+
+.trun{
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
