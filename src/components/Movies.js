@@ -1,5 +1,3 @@
-import Card from "./Card";
-
 const Movies = () => {
 
     return(
