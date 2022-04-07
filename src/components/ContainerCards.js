@@ -5,7 +5,7 @@ import useFetch from "../hooks/useFetch";
 import useSplice from "../hooks/useSplice";
 import Card from "./Card";
 
-const ContainerCards = ({ url, tipoRuta, subtipoRuta, title, recortarArray}) => {
+const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) => {
     
     const [paginado, setPaginado ] = useState(1)
     const elementos = useFetch(url, tipoRuta, subtipoRuta, paginado)
@@ -15,7 +15,7 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, title, recortarArray}) => 
     return (
     <div className="flex flex-col mt-10 mb-5">
         <Link className="flex items-center text-3xl text-white mb-4 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/1`}>
-            {title}
+            {titulo}
         <BsArrowRightShort className="ml-3"/>
         </Link>
         <div className="flex flex-wrap justify-evenly">
