@@ -1,5 +1,3 @@
-import { getByTitle } from "@testing-library/react";
-
 const Card = ({imagen, titulo}) => {
     return(
     <div className="w-55 m-1 mb-3">         
