@@ -31,7 +31,7 @@ const Nav = () => {
                 {inputSerie && <Busqueda tipo="Buscar series" />}
             </div>             
             <div className="hidden m-2 w-64 justify-between items-center text-base md:flex">
-                <Link to="/">Home</Link>
+                <Link to="/">Inicio</Link>
                 <Link to="/movies">Películas</Link>
                 <Link to="/tv">Series</Link>
             </div>
