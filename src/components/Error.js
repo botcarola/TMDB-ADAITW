@@ -1,8 +1,9 @@
 const Error = () => {
 
     return(
-        <>
-        </>
+        <div className="flex justify-center">
+                 
+        </div>
     )
 }
 
