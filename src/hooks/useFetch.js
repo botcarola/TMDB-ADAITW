@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { apiKey } from "../auxiliares/auxiliar.js"
+import { apiKey } from "../auxiliares/auxiliar.js";
+import { Link } from "react-router-dom";
 
 const useFetch = (url, categoria, subcategoria, paginado) => {
 
@@ -17,7 +18,7 @@ const useFetch = (url, categoria, subcategoria, paginado) => {
             setElemento(data.results)
         }
         fetchApi()
-        .catch( () => console.log("error"))
+        .catch( () => <Link to="/*" />)
     }, [paginado])
     
     return elemento
