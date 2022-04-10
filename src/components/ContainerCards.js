@@ -13,23 +13,23 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) =>
     const arrayVerificado = useSplice(elementos, recortarArray)   
 
     return (
-        <div className="mt-10 mb-5 m-5">
-            <Link className="flex items-center text-3xl text-white mb-4 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/${paginado}`}>
-                {titulo}
-            <BsArrowRightShort className="ml-3"/>
-            </Link>
-            <div className="flex flex-wrap justify-evenly">
-                {arrayVerificado.map( curr => 
-                <Card 
-                key={curr.id}
-                id={curr.id}
-                tipoRuta={tipoRuta}
-                imagen={curr.poster_path}
-                titulo={!!curr.title ? curr.title : curr.name}            
-                />                
-                )}
-            </div>            
-        </div>
+    <div className="mt-10 mb-5 m-5">
+        <Link className="flex items-center text-3xl text-white mb-4 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/${paginado}`}>
+            {titulo}
+        <BsArrowRightShort className="ml-3"/>
+        </Link>
+        <div className="flex flex-wrap justify-evenly">
+            {arrayVerificado.map( curr => 
+            <Card 
+            key={curr.id}
+            id={curr.id}
+            tipoRuta={tipoRuta}
+            imagen={curr.poster_path}
+            titulo={!!curr.title ? curr.title : curr.name}            
+            />                
+            )}
+        </div>            
+    </div>
     )
 }
 
