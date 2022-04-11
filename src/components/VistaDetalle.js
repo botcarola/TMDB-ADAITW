@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { recorrerGeneros } from "../auxiliares/auxiliar";
+import SocialMedia from "./SocialMedia";
 
 const VistaDetalle = () => {
 
     const [elemento, setElemento] = useState([])
-    const params = useParams()   
+    const params = useParams()  
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -47,10 +49,39 @@ const VistaDetalle = () => {
                     <div>
                         <img className="w-5/5 h-80" src={`https://image.tmdb.org/t/p/original${elemento.poster_path}`} alt={elemento.name} />
                     </div>
-                    <div>
-                        <h2>
+                    <div className="ml-10 text-white text-sm">
+                        <h2 className="font-light text-3xl">
                             {!!elemento.title ? elemento.title : elemento.name}
                         </h2>
+                        <p className="text-sm">
+                            {elemento.overview}
+                        </p>
+                        <h4>
+                            Duración: {elemento.runtime} min.
+                        </h4>
+                        <div className="flex">
+                            <h4 className="mr-2">Géneros: </h4>
+                            <ul className="flex">
+                                {!!elemento.genres && recorrerGeneros(elemento.genres)}
+                            </ul>
+                        </div>
+                        <h4>
+                            Presupuesto: $ {!!elemento.budget ? elemento.budget : "-"}
+                        </h4>
+                        <h4>
+                            Recaudación: $ {!!elemento.revenue ? elemento.revenue : "-"}
+                        </h4> 
+                        <div className="flex">
+                            <h4 className="mr-2">
+                                Producción:
+                            </h4>
+                            <ul className="flex">
+                                {!!elemento.production_companies && recorrerGeneros(elemento.production_companies)}
+                            </ul>
+                        </div> 
+                        <ul>                            
+                            {<SocialMedia categoria={params.categoria} id={params.id}/>}
+                        </ul>
                     </div>
                 </div>                
             </div>            
