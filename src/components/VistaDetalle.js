@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { recorrerGeneros } from "../auxiliares/auxiliar";
+import { recorrerGeneros, agregarComas } from "../auxiliares/auxiliar";
 import SocialMedia from "./SocialMedia";
 import { FaLink } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
@@ -20,7 +20,6 @@ const VistaDetalle = () => {
     }, [])
 
     console.log(elemento)
-
     return(        
         <main className="flex flex-col">
             <div className="h-[35rem]">
@@ -72,10 +71,10 @@ const VistaDetalle = () => {
                                 </ul>
                             </div>
                             <h4 className="mb-4">
-                                {!!elemento.budget && `Presupuesto: $ ${elemento.budget}`}
+                                {!!elemento.budget && `Presupuesto: $ ${agregarComas(elemento.budget)}`}
                             </h4>
                             <h4 className="mb-4">
-                                {!!elemento.revenue && `Recaudación: $ ${elemento.revenue}`}
+                                {!!elemento.revenue && `Recaudación: $ ${agregarComas(elemento.revenue)}`}
                             </h4> 
                             <div className="flex">
                                 <h4 className="mr-2">

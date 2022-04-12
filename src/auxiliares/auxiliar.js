@@ -77,6 +77,13 @@ export const recorrerGeneros = (arr) => {
     const recorrerArray = arr.map(curr => {
         return <li className="ml-1 mr-1" key={curr.id}>{curr.name}</li>
     })
-
     return recorrerArray
+}
+
+export const agregarComas = (str) => {
+    const aString = String(str)
+    const stringAArray = [...aString].reverse()
+    stringAArray.splice(3, 0, ",")
+    stringAArray.splice(7, 0, ",")  
+    return stringAArray.reverse().join("")
 }
