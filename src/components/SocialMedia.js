@@ -18,6 +18,8 @@ const SocialMedia = ({categoria, id}) => {
 
     return(
         <li>
+            <a href={`https://www.facebook.com/${elemento.facebook_id}`} target="_blank" rel="noopener noreferrer">
+            </a>
         </li>
     )
 }
