@@ -14,9 +14,7 @@ const SocialMedia = ({categoria, id}) => {
         }
         fetchApi()        
     }, [])
-
-    console.log(elemento)
-
+ 
     return(
         <>
             <li>

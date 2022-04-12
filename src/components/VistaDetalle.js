@@ -7,8 +7,8 @@ import { FaLink } from "react-icons/fa";
 const VistaDetalle = () => {
 
     const [elemento, setElemento] = useState([])
-    const params = useParams()  
-
+    const params = useParams() 
+   
     useEffect(() => {
         const fetchApi = async () => {
             const res = await fetch( `https://api.themoviedb.org/3/${params.categoria}/${params.id}?api_key=d2db916ed787e45a269779c746706c07&language=es-ES`)
@@ -45,52 +45,56 @@ const VistaDetalle = () => {
                     SIMILARES
                 </Link>                
             </div>
-            <div className="flex justify-center mb-20">
-                <div className="flex w-4/6 flex-col sm:flex-row sm:justify-between">
-                    <div className="sm:w-[350px]">
-                        <img className="min-w-full" src={`https://image.tmdb.org/t/p/original${elemento.poster_path}`} alt={elemento.name} />
-                    </div>
-                    <div className="text-white text-xs w-5/6">
-                        <h2 className="font-light text-3xl mb-6">
-                            {!!elemento.title ? elemento.title : elemento.name}
-                        </h2>
-                        <p className="mb-4">
-                            {elemento.overview}
-                        </p>
-                        <h4 className="mb-4">
-                            Duración: {!!elemento.runtime ? elemento.runtime : elemento.episode_run_time} min.
-                        </h4>
-                        <div className="flex mb-4">
-                            <h4 className="mr-2">Géneros: </h4>
-                            <ul className="flex">
-                                {!!elemento.genres && recorrerGeneros(elemento.genres)}
+            {params.info === "info" && 
+                <div className="flex justify-center mb-20">
+                    <div className="flex w-4/6 flex-col justify-center  sm:flex-row">                    
+                        <div className="sm:w-[300px] mr-3">
+                            <img className="min-w-full" src={`https://image.tmdb.org/t/p/original${elemento.poster_path}`} alt={elemento.name} />
+                        </div>                    
+                        <div className="text-white text-xs w-full">
+                            <h2 className="font-light text-xl sm:text-3xl mb-6 mt-10 sm:mt-0">
+                                {!!elemento.title ? elemento.title : elemento.name}
+                            </h2>
+                            <p className="mb-4 w-full lg:w-2/4">
+                                {elemento.overview}
+                            </p>
+                            <h4 className="mb-4">
+                                Duración: {!!elemento.runtime ? elemento.runtime : elemento.episode_run_time} min.
+                            </h4>
+                            <div className="flex mb-4">
+                                <h4 className="mr-2">
+                                    Géneros: 
+                                </h4>
+                                <ul className="flex">
+                                    {!!elemento.genres && recorrerGeneros(elemento.genres)}
+                                </ul>
+                            </div>
+                            <h4 className="mb-4">
+                                {!!elemento.budget && `Presupuesto: $ ${elemento.budget}`}
+                            </h4>
+                            <h4 className="mb-4">
+                                {!!elemento.revenue && `Recaudación: $ ${elemento.revenue}`}
+                            </h4> 
+                            <div className="flex">
+                                <h4 className="mr-2">
+                                    Producción:
+                                </h4>
+                                <ul className="flex">
+                                    {!!elemento.production_companies && recorrerGeneros(elemento.production_companies)}
+                                </ul>
+                            </div> 
+                            <ul className="flex text-2xl mt-10 mb-10 w-40 justify-between">                            
+                                {<SocialMedia categoria={params.categoria} id={params.id}/>}
+                                <li>
+                                    <a href={elemento.homepage} target="_blank" rel="noopener noreferrer">
+                                        <FaLink />
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <h4 className="mb-4">
-                            {!!elemento.budget && `Presupuesto: $ ${elemento.budget}`}
-                        </h4>
-                        <h4 className="mb-4">
-                            {!!elemento.revenue && `Recaudación: $ ${elemento.revenue}`}
-                        </h4> 
-                        <div className="flex">
-                            <h4 className="mr-2">
-                                Producción:
-                            </h4>
-                            <ul className="flex">
-                                {!!elemento.production_companies && recorrerGeneros(elemento.production_companies)}
-                            </ul>
-                        </div> 
-                        <ul className="flex text-2xl mt-10 mb-10 w-40 justify-between">                            
-                            {<SocialMedia categoria={params.categoria} id={params.id}/>}
-                            <li>
-                                <a href={elemento.homepage} target="_blank" rel="noopener noreferrer">
-                                    <FaLink />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>                
-            </div>            
+                    </div>                
+                </div>
+            }            
         </main>        
     )
 }
