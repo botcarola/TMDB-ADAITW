@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { recorrerGeneros } from "../auxiliares/auxiliar";
 import SocialMedia from "./SocialMedia";
 import { FaLink } from "react-icons/fa";
+import Rating from '@mui/material/Rating';
 
 const VistaDetalle = () => {
 
@@ -55,6 +56,7 @@ const VistaDetalle = () => {
                             <h2 className="font-light text-xl sm:text-3xl mb-6 mt-10 sm:mt-0">
                                 {!!elemento.title ? elemento.title : elemento.name}
                             </h2>
+                            {!!elemento.vote_average && <Rating name="read-only" value={elemento.vote_average} defaultValue={1} precision={2} readOnly />}
                             <p className="mb-4 w-full lg:w-2/4">
                                 {elemento.overview}
                             </p>
