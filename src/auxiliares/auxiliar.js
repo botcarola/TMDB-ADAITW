@@ -75,7 +75,7 @@ export const propsSeries = [
 export const recorrerGeneros = (arr) => {
 
     const recorrerArray = arr.map(curr => {
-        return <li className="mr-2" key={curr.id}>{curr.name}</li> 
+        return <li key={curr.id}>{curr.name}</li> 
     })
 
     return recorrerArray

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { recorrerGeneros } from "../auxiliares/auxiliar";
 import SocialMedia from "./SocialMedia";
+import { FaLink } from "react-icons/fa";
 
 const VistaDetalle = () => {
 
@@ -10,7 +11,7 @@ const VistaDetalle = () => {
 
     useEffect(() => {
         const fetchApi = async () => {
-            const res = await fetch( `https://api.themoviedb.org/3/${params.categoria}/${params.id}?api_key=d2db916ed787e45a269779c746706c07`)
+            const res = await fetch( `https://api.themoviedb.org/3/${params.categoria}/${params.id}?api_key=d2db916ed787e45a269779c746706c07&language=es-ES`)
             const data = await res.json()
             setElemento(data)
         }
@@ -22,9 +23,9 @@ const VistaDetalle = () => {
     return(        
         <main className="flex flex-col">
             <div className="h-[35rem]">
-                <img className="object-cover object-top h-full w-full" src={`https://image.tmdb.org/t/p/original${elemento.backdrop_path}`} alt={elemento.name} /> 
+                <img className="object-cover object-center h-full w-full " src={`https://image.tmdb.org/t/p/original${elemento.backdrop_path}`} alt={elemento.name} /> 
             </div>
-            <div className="flex text-white justify-center mt-10 mb-10 text-lg font-semibold">
+            <div className="flex text-white justify-center mt-10 mb-10 text-base font-semibold md:text-lg">
                 <Link className="mr-2 ml-2 focus:border-b-4 border-white" to={`/${params.categoria}/${params.id}/info`}>
                     INFO
                 </Link>
@@ -44,32 +45,32 @@ const VistaDetalle = () => {
                     SIMILARES
                 </Link>                
             </div>
-            <div className="flex justify-center">
-                <div className="flex">
-                    <div>
-                        <img className="w-5/5 h-80" src={`https://image.tmdb.org/t/p/original${elemento.poster_path}`} alt={elemento.name} />
+            <div className="flex justify-center mb-20">
+                <div className="flex w-4/6 flex-col sm:flex-row sm:justify-between">
+                    <div className="sm:w-[350px]">
+                        <img className="min-w-full" src={`https://image.tmdb.org/t/p/original${elemento.poster_path}`} alt={elemento.name} />
                     </div>
-                    <div className="ml-10 text-white text-sm">
-                        <h2 className="font-light text-3xl">
+                    <div className="text-white text-xs w-5/6">
+                        <h2 className="font-light text-3xl mb-6">
                             {!!elemento.title ? elemento.title : elemento.name}
                         </h2>
-                        <p className="text-sm">
+                        <p className="mb-4">
                             {elemento.overview}
                         </p>
-                        <h4>
-                            Duración: {elemento.runtime} min.
+                        <h4 className="mb-4">
+                            Duración: {!!elemento.runtime ? elemento.runtime : elemento.episode_run_time} min.
                         </h4>
-                        <div className="flex">
+                        <div className="flex mb-4">
                             <h4 className="mr-2">Géneros: </h4>
                             <ul className="flex">
                                 {!!elemento.genres && recorrerGeneros(elemento.genres)}
                             </ul>
                         </div>
-                        <h4>
-                            Presupuesto: $ {!!elemento.budget ? elemento.budget : "-"}
+                        <h4 className="mb-4">
+                            {!!elemento.budget && `Presupuesto: $ ${elemento.budget}`}
                         </h4>
-                        <h4>
-                            Recaudación: $ {!!elemento.revenue ? elemento.revenue : "-"}
+                        <h4 className="mb-4">
+                            {!!elemento.revenue && `Recaudación: $ ${elemento.revenue}`}
                         </h4> 
                         <div className="flex">
                             <h4 className="mr-2">
@@ -79,8 +80,13 @@ const VistaDetalle = () => {
                                 {!!elemento.production_companies && recorrerGeneros(elemento.production_companies)}
                             </ul>
                         </div> 
-                        <ul>                            
+                        <ul className="flex text-2xl mt-10 mb-10 w-40 justify-between">                            
                             {<SocialMedia categoria={params.categoria} id={params.id}/>}
+                            <li>
+                                <a href={elemento.homepage} target="_blank" rel="noopener noreferrer">
+                                    <FaLink />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>                
