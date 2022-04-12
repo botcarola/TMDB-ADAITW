@@ -9,7 +9,6 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) =>
     
     const [paginado, setPaginado ] = useState(1)
     const elementos = useFetch(url, tipoRuta, subtipoRuta, paginado)
-    console.log(elementos)
     const arrayVerificado = useSplice(elementos, recortarArray)   
 
     return (
