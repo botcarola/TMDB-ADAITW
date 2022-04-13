@@ -5,9 +5,7 @@ const Reparto = ({categoria, id}) => {
 
     const elemento = useFetchDetails(false, categoria, id, "credits") 
     const array = elemento.cast 
-    console.log(elemento)
-    console.log(array)
-
+   
     return(
         <div className="flex flex-wrap justify-center w-3/5">
             {!!array && array.map( curr => 
