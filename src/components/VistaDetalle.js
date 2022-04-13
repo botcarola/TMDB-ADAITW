@@ -5,6 +5,7 @@ import SocialMedia from "./SocialMedia";
 import { FaLink } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
 import Reparto from "./Reparto";
+import Similares from "./Similares";
 
 const VistaDetalle = () => {
 
@@ -88,8 +89,7 @@ const VistaDetalle = () => {
                         </div>
                     </div>                
                 </div>
-            }  
-
+            }
             {params.info === "reparto" && 
                 <div className="flex justify-center mb-10">
                     <Reparto 
@@ -97,7 +97,17 @@ const VistaDetalle = () => {
                     id={params.id} 
                     />
                 </div>    
-            }  
+            } 
+            {
+                params.info === "similares" &&
+                    <div className="flex justify-center mb-10">
+                        <Similares
+                        categoria={params.categoria}
+                        id={params.id}
+                        />
+                    </div>
+
+            } 
 
         </main>        
     )
