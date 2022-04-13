@@ -1,8 +1,10 @@
-const Categorias = () => {
+
+
+const Categorias = () => {  
     
     return(
         <>
-        <h3>salkdjalskd</h3>
+        
         </>
     )
 }

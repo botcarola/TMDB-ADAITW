@@ -1,25 +1,16 @@
-import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import useFetchDetails from "../hooks/useFetchDetails";
 import { recorrerGeneros, agregarComas } from "../auxiliares/auxiliar";
 import SocialMedia from "./SocialMedia";
 import { FaLink } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
+import Reparto from "./Reparto";
 
 const VistaDetalle = () => {
 
-    const [elemento, setElemento] = useState([])
     const params = useParams() 
-   
-    useEffect(() => {
-        const fetchApi = async () => {
-            const res = await fetch( `https://api.themoviedb.org/3/${params.categoria}/${params.id}?api_key=d2db916ed787e45a269779c746706c07&language=es-ES`)
-            const data = await res.json()
-            setElemento(data)
-        }
-        fetchApi()        
-    }, [])
+    const elemento = useFetchDetails(true, params.categoria, params.id )    
 
-    console.log(elemento)
     return(        
         <main className="flex flex-col">
             <div className="h-[35rem]">
@@ -85,7 +76,9 @@ const VistaDetalle = () => {
                                 </ul>
                             </div> 
                             <ul className="flex text-2xl mt-10 mb-10 w-40 justify-between">                            
-                                {<SocialMedia categoria={params.categoria} id={params.id}/>}
+                                {<SocialMedia 
+                                categoria={params.categoria} 
+                                id={params.id}/>}
                                 <li>
                                     <a href={elemento.homepage} target="_blank" rel="noopener noreferrer">
                                         <FaLink />
@@ -95,7 +88,17 @@ const VistaDetalle = () => {
                         </div>
                     </div>                
                 </div>
-            }            
+            }  
+
+            {params.info === "reparto" && 
+                <div className="flex justify-center mb-10">
+                    <Reparto 
+                    categoria={params.categoria}
+                    id={params.id} 
+                    />
+                </div>    
+            }  
+
         </main>        
     )
 }
