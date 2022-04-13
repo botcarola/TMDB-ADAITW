@@ -4,12 +4,13 @@ import { recorrerGeneros, agregarComas } from "../auxiliares/auxiliar";
 import SocialMedia from "./SocialMedia";
 import { FaLink } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
+import Reparto from "./Reparto";
 
 const VistaDetalle = () => {
 
     const params = useParams() 
-    const elemento = useFetchDetails(true, params.categoria, params.id )
-    
+    const elemento = useFetchDetails(true, params.categoria, params.id )    
+
     return(        
         <main className="flex flex-col">
             <div className="h-[35rem]">
@@ -87,13 +88,17 @@ const VistaDetalle = () => {
                         </div>
                     </div>                
                 </div>
-            }     
-            {params.info === "reparto" &&
-                <div>
-                    
-                </div>
-                
-            }       
+            }  
+
+            {params.info === "reparto" && 
+                <div className="flex justify-center mb-10">
+                    <Reparto 
+                    categoria={params.categoria}
+                    id={params.id} 
+                    />
+                </div>    
+            }  
+
         </main>        
     )
 }
