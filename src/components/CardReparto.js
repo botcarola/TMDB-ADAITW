@@ -6,7 +6,7 @@ const CardReparto = ({img, nombre, rol }) => {
     return(
         <Link to="/"  className="m-1 mb-3">
             <div>
-                <img className="w-64 h-96" src={!!img ? `https://image.tmdb.org/t/p/original${img}` : notFound} alt={nombre} />
+                <img className="w-55 h-80" src={!!img ? `https://image.tmdb.org/t/p/original${img}` : notFound} alt={nombre} />
             </div>
             <h3 className="text-white mt-2">
                 {nombre}

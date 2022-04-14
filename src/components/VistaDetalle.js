@@ -6,11 +6,13 @@ import { FaLink } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
 import Reparto from "./Reparto";
 import Similares from "./Similares";
+import Videos from "./Videos";
 
 const VistaDetalle = () => {
 
     const params = useParams() 
-    const elemento = useFetchDetails(true, params.categoria, params.id )    
+    const elemento = useFetchDetails(true, params.categoria, params.id )
+    console.log(elemento)    
 
     return(        
         <main className="flex flex-col">
@@ -98,15 +100,21 @@ const VistaDetalle = () => {
                     />
                 </div>    
             } 
-            {
-                params.info === "similares" &&
-                    <div className="flex justify-center mb-10">
-                        <Similares
-                        categoria={params.categoria}
-                        id={params.id}
-                        />
-                    </div>
-
+            {params.info === "similares" &&
+                <div className="flex justify-center mb-10">
+                    <Similares
+                    categoria={params.categoria}
+                    id={params.id}
+                    />
+                </div>
+            }
+            {params.info === "videos" &&
+                <div className="flex justify-center">
+                    <Videos
+                    categoria={params.categoria}
+                    id={params.id} 
+                    />
+                </div>          
             } 
 
         </main>        
