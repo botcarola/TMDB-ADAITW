@@ -17,7 +17,7 @@ const VistaDetalle = () => {
     return(        
         <main className="flex flex-col">
             <div className="h-[35rem]">
-                <img className="object-cover object-center h-full w-full " src={`https://image.tmdb.org/t/p/original${elemento.backdrop_path}`} alt={elemento.name} /> 
+                <img className="object-cover object-center md:object-top h-full w-full " src={`https://image.tmdb.org/t/p/original${elemento.backdrop_path}`} alt={elemento.name} /> 
             </div>
             <div className="flex text-white justify-center mt-10 mb-20 text-base font-semibold md:text-lg">
                 <Link className="mr-2 ml-2 focus:border-b-4 border-white" to={`/${params.categoria}/${params.id}/info`}>
@@ -57,7 +57,7 @@ const VistaDetalle = () => {
                                 Duración: {!!elemento.runtime ? elemento.runtime : elemento.episode_run_time} min.
                             </h4>
                             <div className="flex mb-4">
-                                <h4 className="mr-2">
+                                <h4>
                                     Géneros:
                                 </h4>
                                 <ul className="flex">
@@ -74,7 +74,7 @@ const VistaDetalle = () => {
                                 <h4 className="mr-2">
                                     Producción:
                                 </h4>
-                                <ul className="flex">
+                                <ul className="flex flex-wrap">
                                     {!!elemento.production_companies && recorrerGeneros(elemento.production_companies)}
                                 </ul>
                             </div> 
@@ -116,15 +116,12 @@ const VistaDetalle = () => {
                     />
                 </div>          
             }
-            {params.info === "episodios" &&
-                <div className="flex justify-center">                    
-                    <Episodios
-                    id={params.id}
-                    temporadas={elemento.seasons}
-                    />
-                </div>
+            {params.info === "episodios" &&                                    
+                <Episodios
+                id={params.id}
+                temporadas={elemento.seasons}
+                />                
             } 
-
         </main>        
     )
 }

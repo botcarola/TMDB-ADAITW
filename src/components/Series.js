@@ -13,6 +13,7 @@ const Series = () => {
                 subtipoRuta={curr.rutaSubtipo}
                 titulo={curr.titulo}                
                 recortarArray={true}
+                paginado={1}
                 />
             )}
         </main>      

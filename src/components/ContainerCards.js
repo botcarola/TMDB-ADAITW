@@ -5,9 +5,8 @@ import useFetch from "../hooks/useFetch";
 import useSplice from "../hooks/useSplice";
 import Card from "./Card";
 
-const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) => {
+const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray, paginado}) => {    
     
-    const [paginado, setPaginado ] = useState(1)
     const elementos = useFetch(url, tipoRuta, subtipoRuta, paginado)
     const arrayVerificado = useSplice(elementos, recortarArray)   
 

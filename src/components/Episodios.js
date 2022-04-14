@@ -24,7 +24,7 @@ const Episodios = ({id, temporadas}) => {
 
     return(
         <div className="flex flex-col justify-center mb-10">
-            <form className="mb-10 ml-10">
+            <form className="mb-10 ml-20">
                 <label>
                     <select className="w-55 bg-stone-900 text-white border border-white rounded-b-lg p-2" onChange={handleChange}>
                         {!!temporadas && temporadas.map( curr =>
