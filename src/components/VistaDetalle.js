@@ -7,12 +7,12 @@ import Rating from '@mui/material/Rating';
 import Reparto from "./Reparto";
 import Similares from "./Similares";
 import Videos from "./Videos";
+import Episodios from "./Episodios";
 
 const VistaDetalle = () => {
 
     const params = useParams() 
     const elemento = useFetchDetails(true, params.categoria, params.id )
-    console.log(elemento)    
 
     return(        
         <main className="flex flex-col">
@@ -115,6 +115,14 @@ const VistaDetalle = () => {
                     id={params.id} 
                     />
                 </div>          
+            }
+            {params.info === "episodios" &&
+                <div className="flex justify-center">                    
+                    <Episodios
+                    id={params.id}
+                    temporadas={elemento.seasons}
+                    />
+                </div>
             } 
 
         </main>        
