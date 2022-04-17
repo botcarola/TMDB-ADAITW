@@ -5,6 +5,7 @@ const Similares = ({ categoria, id }) => {
 
     const elemento = useFetchDetails(false, categoria, id, "similar")
     const array = elemento.results
+    console.log(elemento, id, elemento.id)
 
     return(
         <div className="flex flex-wrap justify-center w-3/5">

@@ -60,7 +60,7 @@ const VistaDetalle = () => {
                                 <h4>
                                     Géneros:
                                 </h4>
-                                <ul className="flex">
+                                <ul className="flex flex-wrap">
                                     {!!elemento.genres && recorrerGeneros(elemento.genres)}
                                 </ul>
                             </div>
@@ -78,7 +78,7 @@ const VistaDetalle = () => {
                                     {!!elemento.production_companies && recorrerGeneros(elemento.production_companies)}
                                 </ul>
                             </div> 
-                            <ul className="flex text-2xl mt-10 mb-10 w-40 justify-between">                            
+                            <ul className="flex text-2xl mt-10 w-40 justify-between">                            
                                 {<SocialMedia 
                                 categoria={params.categoria} 
                                 id={params.id}/>}

@@ -4,14 +4,13 @@ import { useState } from "react";
 import { tituloSubcategoria } from "../auxiliares/auxiliar";
 
 
+
 const Categorias = () => { 
     
-    const params = useParams()
-    console.log(params)
-    const [ paginacion, setPaginacion ] = useState(1)  
+    const params = useParams()   
     
     return(
-        <main className="flex justify-center mb-10">
+        <main className="flex flex-col items-center mb-10">
             {params.subcategoria === "trending" ?
                 <div className="flex flex-wrap w-4/6">
                     <ContainerCards
@@ -20,7 +19,7 @@ const Categorias = () => {
                     subtipoRuta={params.subcategoria}
                     titulo={tituloSubcategoria(params.subcategoria, params.categoria)}
                     recortarArray={false}
-                    paginado={paginacion} 
+                    paginado={true} 
                     />        
                 </div>
                 :
@@ -31,10 +30,10 @@ const Categorias = () => {
                     subtipoRuta={params.subcategoria}
                     titulo={tituloSubcategoria(params.subcategoria, params.categoria)}
                     recortarArray={false}
-                    paginado={paginacion} 
+                    paginado={true} 
                     />        
                 </div>
-            }
+            }            
         </main>
     )
 }

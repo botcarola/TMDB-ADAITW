@@ -72,6 +72,14 @@ export const propsSeries = [
     }
 ]
 
+export const spliceArray = ( elementos, valor) => {
+
+    const elementosRecortados = elementos.slice(0,5)   
+    const verificarRecortarArray = () => valor === true ? elementosRecortados : elementos
+    const arrayVerificado = verificarRecortarArray()
+    return arrayVerificado
+}
+
 export const recorrerGeneros = (arr) => {
 
     const recorrerArray = arr.map(curr => {
