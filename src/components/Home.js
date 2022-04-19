@@ -13,6 +13,7 @@ const Home = () => {
                 subtipoRuta={curr.rutaSubtipo}
                 titulo={curr.titulo}                
                 recortarArray={true}
+                paginado={false}
                 />
             )}
         </main>      

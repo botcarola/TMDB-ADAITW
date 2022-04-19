@@ -72,6 +72,14 @@ export const propsSeries = [
     }
 ]
 
+export const spliceArray = ( elementos, valor) => {
+
+    const elementosRecortados = elementos.slice(0,5)   
+    const verificarRecortarArray = () => valor === true ? elementosRecortados : elementos
+    const arrayVerificado = verificarRecortarArray()
+    return arrayVerificado
+}
+
 export const recorrerGeneros = (arr) => {
 
     const recorrerArray = arr.map(curr => {
@@ -87,3 +95,29 @@ export const agregarComas = (str) => {
     stringAArray.splice(7, 0, ",")  
     return stringAArray.reverse().join("")
 }
+
+export const tituloCategoria = param => param === "movie" ? "Películas" : "Series"
+
+export const tituloSubcategoria = (subcategoria, categoria) => {
+    if(subcategoria === "trending"){
+       return  `${tituloCategoria(categoria)} que son tendencia`
+    }
+    else if(subcategoria === "popular"){
+        return `${tituloCategoria(categoria)} populares`
+    }
+    else if(subcategoria === "top_rated"){
+        return `${tituloCategoria(categoria)} con mejores críticas`
+    }
+    else if(subcategoria === "upcoming"){
+        return "Películas a estrenar"
+    }
+    else if(subcategoria === "now_playing"){
+        return "Películas en cines"
+    }
+    else if(subcategoria === "on_the_air"){
+        return "Series al aire"
+    }
+}
+
+    
+

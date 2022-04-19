@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import useFetch from "../hooks/useFetch";
-import useSplice from "../hooks/useSplice";
+import { spliceArray } from "../auxiliares/auxiliar";
 import Card from "./Card";
+import Paginado from "./Paginado";
 
-const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) => {
+const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray, paginado}) => {    
     
-    const [paginado, setPaginado ] = useState(1)
-    const elementos = useFetch(url, tipoRuta, subtipoRuta, paginado)
-    const arrayVerificado = useSplice(elementos, recortarArray)   
-
+    const [ paginacion, setPaginacion ] = useState(1)     
+    const [elementos , dataPaginado] = useFetch(url, tipoRuta, subtipoRuta, paginacion )
+    const arrayVerificado = spliceArray(elementos, recortarArray)
+       
     return (
     <div className="mt-10 mb-5 m-5">
         <Link className="flex items-center text-3xl text-white mb-4 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/${paginado}`}>
@@ -27,7 +28,13 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray}) =>
             titulo={!!curr.title ? curr.title : curr.name}            
             />                
             )}
-        </div>            
+        </div>
+        <Paginado
+        evento={(e, value) => setPaginacion(value)}
+        valorPaginado={paginacion}
+        paginado={paginado}
+        data={dataPaginado} 
+        /> 
     </div>
     )
 }

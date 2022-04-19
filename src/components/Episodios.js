@@ -19,12 +19,10 @@ const Episodios = ({id, temporadas}) => {
     const handleChange = (e) => {
         setValorSelector(e.target.value)        
     }
-
-    console.log(elemento)
-
+    
     return(
         <div className="flex flex-col justify-center mb-10">
-            <form className="mb-10 ml-10">
+            <form className="mb-10 ml-20">
                 <label>
                     <select className="w-55 bg-stone-900 text-white border border-white rounded-b-lg p-2" onChange={handleChange}>
                         {!!temporadas && temporadas.map( curr =>
@@ -37,7 +35,7 @@ const Episodios = ({id, temporadas}) => {
             </form>
             <div className="flex flex-wrap justify-center">
                 {!!elemento.episodes && elemento.episodes.map( curr =>
-                    <div className="flex flex-col text-white w-4/5 sm:w-[28rem] m-2 mb-5">
+                    <div className="flex flex-col text-white w-4/5 sm:w-[28rem] m-2 mb-5" key={curr.id}>
                         <img className="w-full h-[15rem] sm:w-full sm:h-64 mb-2" src={`https://image.tmdb.org/t/p/original${curr.still_path}`} />
                         <div className="flex mb-2">
                             <h3 className="mr-2">

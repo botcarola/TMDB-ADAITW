@@ -3,3 +3,11 @@ body{
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+
+.MuiPaginationItem-root {
+  color: #ffffff !important;
+}
+
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #bd1e1e !important;
+}
