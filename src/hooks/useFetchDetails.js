@@ -19,7 +19,7 @@ const useFetchDetails = (url, categoria, id, subcategoria) => {
         }
         fetchApi()
         .catch( () => <Link to="/*" />)
-    }, [""])
+    }, [urlVerificada])
     
     return elemento
 }

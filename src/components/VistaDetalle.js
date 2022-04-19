@@ -104,7 +104,7 @@ const VistaDetalle = () => {
                 <div className="flex justify-center mb-10">
                     <Similares
                     categoria={params.categoria}
-                    id={params.id}
+                    identificador={params.id}
                     />
                 </div>
             }

@@ -1,11 +1,10 @@
 import useFetchDetails from "../hooks/useFetchDetails";
 import Card from "./Card";
 
-const Similares = ({ categoria, id }) => {
-
-    const elemento = useFetchDetails(false, categoria, id, "similar")
-    const array = elemento.results
-    console.log(elemento, id, elemento.id)
+const Similares = ({ categoria, identificador }) => {
+    
+    const elemento = useFetchDetails(false, categoria, identificador, "similar")
+    const array = elemento.results  
 
     return(
         <div className="flex flex-wrap justify-center w-3/5">

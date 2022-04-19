@@ -30,7 +30,10 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray, pag
             )}
         </div>
         <Paginado
-        paginado={paginado} 
+        evento={(e, value) => setPaginacion(value)}
+        valorPaginado={paginacion}
+        paginado={paginado}
+        data={dataPaginado} 
         /> 
     </div>
     )

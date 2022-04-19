@@ -98,23 +98,23 @@ export const agregarComas = (str) => {
 
 export const tituloCategoria = param => param === "movie" ? "Películas" : "Series"
 
-export const tituloSubcategoria = (param, subparam) => {
-    if(param === "trending"){
-       return  `${tituloCategoria(subparam)} que son tendencia`
+export const tituloSubcategoria = (subcategoria, categoria) => {
+    if(subcategoria === "trending"){
+       return  `${tituloCategoria(categoria)} que son tendencia`
     }
-    else if(param === "popular"){
-        return `${tituloCategoria(subparam)} populares`
+    else if(subcategoria === "popular"){
+        return `${tituloCategoria(categoria)} populares`
     }
-    else if(param === "top_rated"){
-        return `${tituloCategoria(subparam)} con mejores críticas`
+    else if(subcategoria === "top_rated"){
+        return `${tituloCategoria(categoria)} con mejores críticas`
     }
-    else if(param === "upcoming"){
+    else if(subcategoria === "upcoming"){
         return "Películas a estrenar"
     }
-    else if(param === "now_playing"){
+    else if(subcategoria === "now_playing"){
         return "Películas en cines"
     }
-    else if(param === "on_the_air"){
+    else if(subcategoria === "on_the_air"){
         return "Series al aire"
     }
 }
