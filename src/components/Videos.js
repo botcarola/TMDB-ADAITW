@@ -13,6 +13,7 @@ const Videos = ({categoria, id}) => {
                     <iframe className="mb-10 h-[18rem] sm:h-[30rem]"
                     key={curr.id}
                     src={`https://www.youtube.com/embed/${curr.key}`}
+                    title="videos promocionales"
                     />                        
                 )
                 :

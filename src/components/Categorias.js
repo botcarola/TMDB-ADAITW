@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import ContainerCards from "./ContainerCards";
-import { useState } from "react";
 import { tituloSubcategoria } from "../auxiliares/auxiliar";
 
 

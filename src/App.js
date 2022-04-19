@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "./components/Home";
+import ResultadosBusqueda from './components/ResultadosBusqueda';
 import VistaDetalle from "./components/VistaDetalle";
 import Movies from "./components/Movies";
 import Series from "./components/Series";
@@ -18,6 +19,7 @@ const App = () => {
             <Nav />
             <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/busqueda/:resultados" element={<ResultadosBusqueda />} />
                   <Route path="/movies" element={<Movies />} />
                   <Route path="/:categoria/:id/:info" element={<VistaDetalle />} />
                   <Route path="/:categoria/:subcategoria/page/:pagina" element={<Categorias />} />                    
