@@ -69,9 +69,9 @@ const VistaDetalle = () => {
                             </h4>
                             <h4 className="mb-4">
                                 {!!elemento.revenue && `Recaudación: $ ${agregarComas(elemento.revenue)}`}
-                            </h4> 
+                            </h4>                                    
                             <div className="flex">
-                                <h4 className="mr-2">
+                                <h4>
                                     Producción:
                                 </h4>
                                 <ul className="flex flex-wrap">

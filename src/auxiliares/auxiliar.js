@@ -90,7 +90,7 @@ export const recorrerGeneros = (arr) => {
 
 export const agregarComas = (str) => {
     const aString = String(str)
-    const stringAArray = [...aString].reverse()
+    const stringAArray = [...aString].reverse()    
     stringAArray.splice(3, 0, ",")
     stringAArray.splice(7, 0, ",")  
     return stringAArray.reverse().join("")

@@ -27,8 +27,8 @@ const Nav = () => {
                         <BiMovie className={inputPelicula === true ? "text-red-600 m-2" : "m-2" } onClick={handleClickPelicula} />
                         <BsTv className={inputSerie === true ? "text-red-600 m-2" : "m-2"} onClick={handleClickSerie} />
                 </div>
-                {inputPelicula && <Busqueda tipo="Buscar películas" />}
-                {inputSerie && <Busqueda tipo="Buscar series" />}
+                {inputPelicula && <Busqueda tipo="Buscar películas" categoria="movie"/>}
+                {inputSerie && <Busqueda tipo="Buscar series" categoria="tv"/>}
             </div>             
             <div className="hidden m-2 w-64 justify-between items-center text-base md:flex">
                 <Link to="/">Inicio</Link>
