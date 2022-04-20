@@ -1,24 +1,19 @@
 import { GoSearch } from "react-icons/go";
 import { useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Busqueda = ({tipo,categoria}) => {
 
     const [valorInput, setValorInput] = useState()
-    const navigate = useNavigate()
-    // const [searchParams, setSearchParams] = useSearchParams({
-    //     search: ""
-    // })  
+    const navigate = useNavigate()    
 
     const handleChange = e => {
         setValorInput(e.target.value)                
     }
+    
     const handleSubmit = e => {
-        e.preventDefault()
-        // setSearchParams({
-        //     search: e.target.value
-        // })        
-        navigate(`/busqueda/${valorInput}`)
+        e.preventDefault()               
+        navigate(`/${categoria}/resultados/${valorInput}`)
     }   
 
     return (
@@ -30,11 +25,11 @@ const Busqueda = ({tipo,categoria}) => {
                 type="text" 
                 name="search" 
                 placeholder={tipo}
-                value={valorInput} 
+                value={valorInput || ""} 
                 className="bg-zinc-800 text-slate-200 h-10 px-5 pr-8 rounded-full text-sm focus:outline-none"
                 />
             </label>
-            <button type="button" className="absolute right-0 top-0 mt-3 mr-4" aria-label="Buscar">
+            <button className="absolute right-0 top-0 mt-3 mr-4" aria-label="Buscar">
                 <GoSearch />
             </button>
         </form>

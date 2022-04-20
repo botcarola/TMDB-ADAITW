@@ -2,8 +2,6 @@ import { useParams } from "react-router-dom";
 import ContainerCards from "./ContainerCards";
 import { tituloSubcategoria } from "../auxiliares/auxiliar";
 
-
-
 const Categorias = () => { 
     
     const params = useParams()   

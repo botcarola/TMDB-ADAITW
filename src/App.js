@@ -19,7 +19,7 @@ const App = () => {
             <Nav />
             <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/busqueda/:resultados" element={<ResultadosBusqueda />} />
+                  <Route path="/:tipoBusqueda/resultados/:resultados" element={<ResultadosBusqueda />} />
                   <Route path="/movies" element={<Movies />} />
                   <Route path="/:categoria/:id/:info" element={<VistaDetalle />} />
                   <Route path="/:categoria/:subcategoria/page/:pagina" element={<Categorias />} />                    
