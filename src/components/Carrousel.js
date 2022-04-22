@@ -12,7 +12,7 @@ import useFetch from "../hooks/useFetch";
     console.log(elemento)
   return (
     <>
-      <Swiper
+        <Swiper
         spaceBetween={30}
         centeredSlides={true}
         loop={true}
@@ -26,14 +26,12 @@ import useFetch from "../hooks/useFetch";
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
-      >
+        >
           {elemento && elemento.map(curr =>
              <SwiperSlide key={curr.id}>
                  <img src={`https://image.tmdb.org/t/p/original${curr.backdrop_path}`} alt={curr.title} />
-             </SwiperSlide>)}
-        
-        
-        
+             </SwiperSlide>
+          )}    
       </Swiper>
     </>
   );

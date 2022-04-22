@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Busqueda from "./Busqueda";
 import { BsTv } from "react-icons/bs";
 import { BiMovie } from "react-icons/bi";
-import { ImMenu } from "react-icons/im";
+import MenuResponsive from "./MenuResponsive";
 
 
 const Nav = () => {
@@ -36,7 +36,7 @@ const Nav = () => {
                 <Link to="/tv">Series</Link>
             </div>
             <button className="m-2 lg:hidden md:hidden">
-                <ImMenu />
+                <MenuResponsive />
             </button>          
         </nav> 
     )
