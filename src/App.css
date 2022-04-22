@@ -46,3 +46,7 @@ body{
 .swiper-button-next, .swiper-button-prev {
   color: rgb(95, 0, 0) !important;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(95, 0, 0) !important;
+} 
