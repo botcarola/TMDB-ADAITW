@@ -1,68 +1,42 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "../App.css";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import useFetch from "../hooks/useFetch";
 
-const Carrousel = () => {
+ const Carrousel = () => {
 
-    const elementos = useFetch()
-
+    const [ elemento ] = useFetch(true, "movie", "popular", 1)
+    console.log(elemento)
   return (
     <>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
+        spaceBetween={30}
         centeredSlides={true}
-        slidesPerView={"auto"}
-        autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
         loop={true}
-        pagination={true}
-        modules={[Autoplay, EffectCoverflow, Pagination]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: false,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+          {elemento && elemento.map(curr =>
+             <SwiperSlide key={curr.id}>
+                 <img src={`https://image.tmdb.org/t/p/original${curr.backdrop_path}`} alt={curr.title} />
+             </SwiperSlide>)}
+        
+        
+        
       </Swiper>
     </>
-  )
+  );
 }
 
 export default Carrousel;
