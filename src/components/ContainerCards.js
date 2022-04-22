@@ -14,7 +14,7 @@ const ContainerCards = ({ url, tipoRuta, subtipoRuta, titulo, recortarArray, pag
        
     return (
     <div className="mt-10 mb-5 m-5">
-        <Link className="flex items-center text-3xl text-white mb-4 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/${paginado}`}>
+        <Link className="flex items-center text-xl sm:text-3xl text-white mb-10 font-thin" to ={`/${tipoRuta}/${subtipoRuta}/page/${paginado}`}>
             {titulo}
         <BsArrowRightShort className="ml-3"/>
         </Link>

@@ -1,10 +1,12 @@
 import ContainerCards from "./ContainerCards";
 import { propsMain } from "../auxiliares/auxiliar";
+import Carrousel from "./Carrousel";
 
 const Home = () => {
 
     return(
         <main className='flex flex-col items-center mb-10'>
+            <Carrousel />
             {propsMain.map(curr => 
                 <ContainerCards 
                 key={curr.id}
