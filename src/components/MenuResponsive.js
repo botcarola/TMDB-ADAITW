@@ -15,7 +15,7 @@ const MenuResponsive = () => {
         </div>
         
         {!!isOpen &&
-            <div className="backdrop-blur-xl  overflow-hidden w-screen min-h-screen z-20 absolute top-0 right-0  transition ease-in-out duration-500 overscroll-none">
+            <div className="backdrop-blur-xl w-screen min-h-screen z-20 absolute top-0 right-0  transition ease-in-out duration-500">
                 <div className="w-[14rem] bg-gradient-to-r from-red-900 to-black z-50 absolute top-0 right-0 min-h-screen flex flex-col text-left items-center">
                     <div onClick={ () => setIsOpen(false)} className="mt-5 w-3/4 flex justify-end">
                         <AiFillCloseSquare />

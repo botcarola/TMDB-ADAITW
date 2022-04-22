@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiKey } from "../auxiliares/auxiliar.js";
 import { Link } from "react-router-dom";
-import CircularProgress from '@mui/material/CircularProgress';
 
 const useFetch = (url, categoria, subcategoria, paginado) => {
 
@@ -14,7 +13,7 @@ const useFetch = (url, categoria, subcategoria, paginado) => {
     const urlVerificada = verificarUrl()
 
     useEffect(() => {
-        const fetchApi = async () => {
+        const fetchApi = async () => {            
             const res = await fetch(urlVerificada)
             const data = await res.json()
             setElemento(data.results)

@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+<h1 align="center">THE MOVIE DATABASE FINDER</h1>
+<p align="center">
+    <img src="https://i.imgur.com/YRobmVo.png" alt="imagen-desktop" width="600p"/>            
+</p>
+&nbsp;
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<h2>
+    Proyecto React: "The movie Database"
+</h2>
 
-In the project directory, you can run:
+<p>
+    Este es el último proyecto a presentar a ADAITW, en donde realizamos una web con React.JS, utilizando las siguientes herramientas:
+</p>
+&nbsp;
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center">
+<a href="https://es.reactjs.org/" target="_blank"> 
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" alt="html5" width="70" height="70"/> 
+</a> 
+<a href="https://tailwindcss.com/" target="_blank"> 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png" alt="javascript" width="70" height="70"/>  
+  </a>
+  <a href="https://reactrouter.com/" target="_blank"> 
+    <img src="https://seeklogo.com/images/R/react-router-logo-AB5BFB638F-seeklogo.com.png" alt="javascript" width="70" height="70"/>  
+  </a>
+  <a href="https://mui.com/" target="_blank"> 
+            <img src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg" alt="FontAwesome" width="70" height="70"/> 
+</a>                     
+<a href="https://swiperjs.com/" target="_blank">
+            <img src="https://cms-assets.tutsplus.com/uploads/users/780/posts/39427/image-upload/68747470733a2f2f6769746875622e7375726d6f6e2e6d652f696d616765732f636f6d6d6f6e2f7377697065722d6c6f676f2e737667.svg" alt="Undraw" width="70" height="70"/>  
+</p>
+  
+&nbsp;
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>
+    Criterios de evaluación:
+</h2>
 
-### `npm test`
+<h3>
+    Los requisitos mínimos para que el proyecto sea considerado para la entrega son:
+</h3>
+&nbsp;
+  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Debe respetar el diseño general dado. Pueden modificarse a gusto colores, fondo, fuentes e íconos
+* Debe respetar las interacciones y flujo de pantallas
+* Debe ser responsive
+* Debe cumplir con las funcionalidades principales listadas en la sección siguiente
+* Debe hacer hacer uso de un framework CSS
+* Debe estar deployado y ser accesible desde una dirección web
+* No se debe trabajar en la rama main. En main sólo van a mergearse las demás ramas, por lo que cada commit de main debería ser el merge de una branch de una funcionalidad terminada
+* Cada funcionalidad que se agregue debe hacerse mediante un PR (Pull Request)
+&nbsp;
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2>
+   Funcionalidades principales#
+</h2>
+&nbsp;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Se debe tener un menú que nos muestre diferentes vistas(Home, ultimos lanzamientos, Populares y Buscador)
+- En Home se debe tener un slider con al menos 5 películas recomendadas y una breve descripción de la película en cuestión.
+- En Home debe tener dos listas(Populares y mejor puntadas) con al menos 10 películas cada una.
+- Cuando demos click a cualquier película debe llevarnos a una vista donde se vea el fondo de pantalla de esa película, el poster y la descripción de la misma.
+- Dentro de los detalles debemos contar con un botón para reproducir el triler de dicha película(funcionalidad avanzada)
+- La vista de Últimos lanzamientos nos debe mostrar un listado de al menos 20 películas en cards, con su titulo y un botón para llevarnos a la vista de detalles de - película (anteriormente mencionada)
+- La vista de Últimos lanzamientos debe contar con un paginador, para poder ir viendo de 20 películas en 20 películas(funcionalidad avanzada)
+- La vista de Populares debe tener lo mismo que la vista de Últimos lanzamientos pero con las películas más populares.
+- La vista de Buscador debe contar con un input, el cual al ir escribiendo se debe hacer un filtro y mostrar al menos 20 películas(en caso que existan) que concuerden con lo que el usuario eligió. . La URL de nuestra aplicación debe reflejar los cambios que el usuario haga, por ejemplo al seleccionar una película se debe modificar con el id de la película, al buscar una película se debe editar la url con los datos que el usuario va escribiendo(funcionalidad avanzada)
+- Todas las vistas deben de tener un footer.  
+  &nbsp;
+  
+  
+<p align="">🎥 Link al proyecto: <a href="https://tmdb-adaitw.vercel.app/" target="_blank">TMDB API</a></p>
+  
+  
