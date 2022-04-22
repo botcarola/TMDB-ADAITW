@@ -21,7 +21,7 @@ const Nav = () => {
     }
 
     return (
-        <nav className="bg-zinc-900 border border-black flex text-gray-50 justify-between text-xl p-2 sticky top-0 md:relative">                            
+        <nav className="z-10 bg-zinc-900 border border-black flex text-gray-50 justify-between text-xl p-2 sticky top-0 md:relative">                            
             <div className="flex items-center">
                 <div className="flex pr-3">
                         <BiMovie className={inputPelicula === true ? "text-red-600 m-2" : "m-2" } onClick={handleClickPelicula} />

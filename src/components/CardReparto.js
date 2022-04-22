@@ -4,7 +4,7 @@ import notFound from "../assets/notfound.png";
 const CardReparto = ({img, nombre, rol }) => {      
 
     return(
-        <Link to="/"  className="m-1 mb-3">
+        <Link to="/" className="m-1 mb-3">
             <div>
                 <img className="w-55 h-80" src={!!img ? `https://image.tmdb.org/t/p/original${img}` : notFound} alt={nombre} />
             </div>

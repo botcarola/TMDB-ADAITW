@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiKey } from "../auxiliares/auxiliar.js";
 import { Link } from "react-router-dom";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const useFetch = (url, categoria, subcategoria, paginado) => {
 
