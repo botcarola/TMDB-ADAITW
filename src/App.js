@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 const App = () => {
 
   return(
-
+// No es necesario el fragmento de React, ya que BrowserRouter es el padre de todos los demas elementos
     <>        
         <BrowserRouter>
             <Nav />

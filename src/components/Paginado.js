@@ -2,7 +2,7 @@ import Pagination from '@mui/material/Pagination';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const Paginado = ({paginado, valorPaginado, data, evento}) => {
-
+// ahhh, me encanta que hayas explorado el theme de material
     const theme = createTheme({
         palette:{
             primary:{

@@ -8,6 +8,7 @@ const SocialMedia = ({categoria, id}) => {
     return(
         <>
             <li>
+                {/* faltan etiquetas aria aqui */}
                 <a href={`https://www.imdb.com/title/${elemento.imdb_id}/`} target="_blank" rel="noopener noreferrer">
                     <FaImdb />
                 </a>

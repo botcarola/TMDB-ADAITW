@@ -21,9 +21,9 @@ const ResultadosBusqueda = () => {
     }, [paginacion, params.resultados])
 
     const array = elemento.results
+    // no dejes console log!
     console.log(elemento
         )
- 
     return(
         <main className="flex flex-col items-center mb-10 mt-10">
             <div className="flex flex-col w-3/5">

@@ -2,6 +2,7 @@ import { GoSearch } from "react-icons/go";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// deja un espacio entre tus props
 const Busqueda = ({tipo,categoria}) => {
 
     const [valorInput, setValorInput] = useState()
