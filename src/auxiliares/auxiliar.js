@@ -73,7 +73,7 @@ export const propsSeries = [
 ]
 
 export const spliceArray = ( elementos, valor) => {
-
+// perfecto
     const elementosRecortados = elementos.slice(0,5)   
     const verificarRecortarArray = () => valor === true ? elementosRecortados : elementos
     const arrayVerificado = verificarRecortarArray()
@@ -99,6 +99,7 @@ export const agregarComas = (str) => {
 export const tituloCategoria = param => param === "movie" ? "Películas" : "Series"
 
 export const tituloSubcategoria = (subcategoria, categoria) => {
+    // ojo con la prolijidad, deja espacio despues del if y antes del {
     if(subcategoria === "trending"){
        return  `${tituloCategoria(categoria)} que son tendencia`
     }

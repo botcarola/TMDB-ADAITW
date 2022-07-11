@@ -9,6 +9,7 @@ const Videos = ({categoria, id}) => {
     return(
         <div className="flex flex-col mb-10 w-4/5 lg:w-3/5">
             {!!array && array !== [] ?
+            // excelente
                 array.map( curr => 
                     <iframe className="mb-10 h-[18rem] sm:h-[30rem]"
                     key={curr.id}

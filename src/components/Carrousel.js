@@ -9,6 +9,7 @@ import useFetch from "../hooks/useFetch";
  const Carrousel = () => {
 
     const [ elemento ] = useFetch(true, "movie", "popular", 1)
+    // no dejes console log
     console.log(elemento)
   return (
     <>

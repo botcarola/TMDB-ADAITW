@@ -9,6 +9,7 @@ const Card = ({id, tipoRuta, imagen, titulo}) => {
                 <img className="w-55 h-80" src={!!imagen ? `https://image.tmdb.org/t/p/original${imagen}` : notFound} alt={titulo} /> 
             </div>         
             <h2 className="text-white mt-4">
+                {/* perfecto */}
                 {titulo.length > 23 ? `${titulo.slice(0, 23)}...` : titulo}
             </h2>              
         </Link>
